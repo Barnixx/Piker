@@ -1,12 +1,18 @@
-<mat-toolbar>
-  <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-around center">
-    <div>
+<mat-toolbar color="primary">
+  <mat-toolbar-row fxLayout="row wrap" fxLayoutAlign="space-between center">
+    <div fxFlex="20">
       <span>Piker</span>
     </div>
-    <div>
+    <div fxFlex="50">
       <form>
-        <input>
+        <input class="form-control rounded-0" fxFlex="55" placeholder="Wyszukaj aukcje">
+        <select fxFlex="30" class="selectpicker show-tick" data-header="Wybierz kategorie"
+                data-style="navbar-select rounded-0" data-live-search="true">
+          <option>None</option>
+        </select>
+        <button fxFlex="15" mat-flat-button color="accent" class="rounded-0">Szukaj</button>
       </form>
     </div>
+    <div fxFlex="30"></div>
   </mat-toolbar-row>
 </mat-toolbar>
