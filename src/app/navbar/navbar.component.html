@@ -1,21 +1,51 @@
 <mat-toolbar color="primary">
-  <mat-toolbar-row fxLayout="row wrap" fxLayoutAlign="space-between center">
-    <div fxFlex="20">
+  <mat-toolbar-row fxFill fxLayout="row wrap" fxLayoutAlign="space-between center" class="p-3">
+    <div fxFlex="20" fxFlexOrder.gt-sm="1">
       <span>Piker</span>
     </div>
-    <div fxFlex="50">
+    <div fxFlex="20" fxLayoutAlign="end center" fxFlexOrder.gt-sm="3" class="pr-2">
+      <button mat-icon-button [matMenuTriggerFor]="userMenu">
+        <mat-icon>person</mat-icon>
+      </button>
+      <mat-menu #userMenu="matMenu">
+        <div fxLayout="row" fxLayoutAlign="space-evenly center">
+          <div fxLayout="column">
+            <button mat-menu-item>
+              Załóż konto
+            </button>
+          </div>
+          <div fxLayout="column">
+            <button mat-menu-item>
+              Zaloguj się
+            </button>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-evenly center">
+          <div fxLayout="column">
+            <button mat-menu-item>
+              Załóż konto
+            </button>
+          </div>
+          <div fxLayout="column">
+            <button mat-menu-item>
+              Zaloguj się
+            </button>
+          </div>
+        </div>
+      </mat-menu>
+    </div>
+    <div fxFlex fxFlex.xs="noshrink" fxFlex.gt-xs="noshrink" fxFlexOrder.gt-sm="2" class="navbar-search-line">
       <form>
-        <input class="form-control rounded-0" fxFlex="55" placeholder="Wyszukaj aukcje">
-        <select fxFlex="30" class="selectpicker show-tick" data-header="Wybierz kategorie"
-                data-style="navbar-select rounded-0" data-live-search="true">
+        <input fxFlex fxFlex.lt-xs="noshrink" class="form-control rounded-0" placeholder="Wyszukaj aukcje">
+        <select fxFlex="30" class="selectpicker hidden-select show-tick" data-header="Wybierz kategorie"
+                data-style="navbar-select rounded-0">
           <option selected>Wybierz Kategorie</option>
           <option *ngFor="let category of categories">
             {{category.categoryName}}
           </option>
         </select>
-        <button fxFlex="15" mat-flat-button color="accent" class="rounded-0 border border-left-0">Szukaj</button>
+        <button fxFlex="15" mat-flat-button color="accent" class="rounded-0">Szukaj</button>
       </form>
     </div>
-    <div fxFlex="30"></div>
   </mat-toolbar-row>
 </mat-toolbar>
