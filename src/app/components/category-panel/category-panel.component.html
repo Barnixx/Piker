@@ -1,0 +1,14 @@
+<div>
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let category of categories">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{category.categoryName}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div *ngFor="let subcat of category.subcategories">
+        {{subcat.categoryName}}
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
