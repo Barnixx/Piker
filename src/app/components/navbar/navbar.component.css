@@ -14,11 +14,32 @@
   }
 }
 
-/*@media only screen and (max-width: 400px) {*/
-/*.navbar-search-line{*/
-/*min-width: 50px;*/
-/*}*/
-/*}*/
+@media only screen and (min-width: 960px) {
+    .navbar-first-line > div {
+        height: 100%;
+    }
+
+    .navbar-search-line {
+        padding: 0.75rem;
+    }
+
+    .navbar-search-line form, .navbar-search-line button, .navbar-search-line select, .navbar-search-line input {
+        height: 100%;
+    }
+
+    .navbar-select {
+        line-height: 32px;
+    }
+
+    .piker-logo {
+        text-align: right;
+        padding-right: 2rem;
+    }
+
+    .piker-logo > img {
+        width: 11rem;
+    }
+}
 
 .navbar-select {
   border: 1px solid #ced4da;
@@ -32,4 +53,6 @@
   border: 0 !important;
   font-weight: 500;
 }
+
+
 
