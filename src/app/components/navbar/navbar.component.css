@@ -23,8 +23,8 @@
         padding: 0.75rem;
     }
 
-    .navbar-search-line form, .navbar-search-line button, .navbar-search-line select, .navbar-search-line input {
-        height: 100%;
+    .navbar-search-line form, .navbar-search-line > form > div > select + button, .navbar-search-line input {
+        height: 45px;
     }
 
     .navbar-select {

@@ -1,6 +1,9 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {CategoryService} from '../../services/category/category.service';
 import {CategoryModel} from '../../models/category.model';
+import {tap} from 'rxjs/operators';
+
+declare var $: any;
 
 @Component({
   selector: 'app-navbar',
@@ -16,9 +19,15 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.categoryService.getCategory(true).subscribe(cat => {
-      this.categories = cat.content;
-        console.log(cat.content);
+      this.categoryService.getCategory(true)
+          .pipe(
+              tap(() => {
+                  setTimeout(() => {
+                      $('.selectpicker').selectpicker('refresh');
+                  });
+              })).subscribe(cat => {
+          this.categories = cat.content;
+          console.log(cat.content);
     });
   }
 }
